@@ -5,9 +5,9 @@ const fs = require('fs');
 function checkSrc(src, callback) {
   if (!Array.isArray(src)) {
     return callback('Source is not an Array');
-  } else if (src.length < 2) {
-    return callback('There must be atleast 2 input files');
-  }
+  } // else if (src.length < 2) {
+    // return callback('There must be atleast 2 input files');
+  // }
 
   const norm_src = [];
 
@@ -66,7 +66,7 @@ module.exports = function (src, dest, opts, callback) {
       return callback(err);
     }
 
-    command = command.concat(norm_src);
+    command = command.concat(src);
 
     command.push(`"${dest}"`);
 
